@@ -32,7 +32,7 @@ const CreateUser = () => {
       imageurl: content.imageurl,
       comments: content.comments
     }
-    await axios.post("http://localhost:4000/api/users/", newUser)
+    await axios.post("https://brevity-4kav.onrender.com/api/users", newUser)
 
 
     setContent(schemeObj)
