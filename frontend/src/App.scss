@@ -1,0 +1,406 @@
+
+//Imports and Vars
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700&display=swap');
+$bg-color: black;
+$bg-color2: #0d0d0d;
+$text-color: white;
+$text-color2: #4452FB;
+$text-color3: #8d8b8d;
+$primary-font: 'Exo 2', sans-serif;
+$secondary-font: 'Catamaran', sans-serif;
+
+//Global
+body{
+    margin: 0;
+    font-family: $secondary-font;
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+//Custom Scrollbar
+
+body::-webkit-scrollbar {
+    background-color: $bg-color2;
+    width: 0.5em;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: $text-color2;
+    border-radius: 100px;
+    transition: all 0.5s;
+}
+
+.comments::-webkit-scrollbar {
+    background-color: #0b0b0c;
+    width: 0.2em;
+}
+.comments::-webkit-scrollbar-thumb {
+    background-color: $text-color2;
+    border-radius: 100px;
+    transition: all 0.5s;
+}
+
+//Navigation
+
+nav{
+    background-color: $bg-color;
+    text-align: right;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    .nav-link{
+        font-family: $secondary-font;
+        font-weight: bold;
+        letter-spacing: 5px;
+        margin: 5px 0 0px 0;
+        font-size: 24px;
+        color: $text-color;
+        text-decoration: none;
+        transition: all 0.2s
+    }
+    .company-logo{
+        font-size: 40px;
+    }
+    .nav-link:hover{
+        scale: 1.1;
+        color: $text-color2;
+    }
+}
+
+// Welcome Section
+
+.welcome-section{
+    font-family: $secondary-font;
+    height: 500px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #000000;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+
+    h1{
+        padding: 0;
+        margin: 0;
+        i{
+            color: $text-color2;
+        }
+    }
+
+    h2{
+        font-size: 30px;
+        font-weight: 400;
+        padding: 0;
+        margin-top: 0;
+    }
+
+}
+
+// Selectors
+.selectors{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5vh 0 10vh 0;
+
+    button{
+        background-color: $bg-color;
+        border: solid;
+        border-color: $text-color;
+        border-radius: 5px;
+        color: $text-color;
+        padding: 5px 25px 5px 25px;
+        font-size: 20px;
+        border-width: 2px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: all 0.5s;
+    }
+
+    button:hover{
+        background-color: $text-color;
+        border-color: $text-color;
+        color: $text-color2;
+    }
+}
+
+//Cards
+
+.card-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .phrase-card{
+        background-color: $bg-color2;
+        border-radius: 10px;
+        color: $text-color;
+        width: 700px;
+        margin: 3vh 0 3vh 0;
+        h1{
+            margin: 0;
+            padding: 10px 0 10px 0;
+            text-align: center;
+            color: $text-color;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .author{
+            text-align: center;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: thin;
+            color: $text-color2;
+        }
+
+        .description{
+            margin: 10px;
+            font-size: 25px;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .date{
+            margin: 0 0 0 10px;
+            font-size: 12px;
+            font-weight: 100;
+            color: $text-color3;
+            text-align: center;
+        }
+
+        .share-buttons{
+            text-align: center;
+            font-size: 34px;
+            a{
+            color: $text-color3;
+            text-decoration: none;
+            transition: 0.5s;
+            }
+            a:hover{
+                color: #12c3d7;
+            }
+        }
+
+    }
+}
+
+//Comments
+.comments-title{
+    margin: 0 10px 0 10px;
+    color: $text-color3;
+}
+
+.comments{
+    margin: 10px;
+    height: 100px;
+    overflow-y: scroll;
+    .comments-default{
+        text-align: center;
+        i{
+            font-size: 32px;
+            color: $text-color3
+        }
+    }
+    .comment{
+        display: flex;
+        align-items: center;
+        i{
+            font-size: 32px;
+            margin: 0 10px 0 10px;
+        }
+        p{
+            vertical-align: middle;
+
+        }
+    }
+}
+
+// Comment field
+.comment-field{
+    width: 700px;
+    background-color: $bg-color2;
+    border-radius: 10px;
+    margin-bottom: 10vh;
+
+    form{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+
+        input{
+            background-color: $bg-color2;
+            color: $text-color;
+            width: 80%;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            padding: 20px;
+        }
+
+        button{
+            background-color: $bg-color2;
+            color: $text-color;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        button:hover{
+            color: $text-color2;
+        }
+
+    }
+}
+
+//Create User
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+.create-quote-form{
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-color2;
+    position: relative;
+    top: 100px;
+    width: 600px;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+
+    h1{
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 5px;
+        margin: 0;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+
+        input{
+            background-color: $bg-color2;
+            padding: 10px;
+            border-radius: 5px;
+            color: $text-color;
+        }
+
+        textarea{
+            background-color: $bg-color2;
+            padding: 10px;
+            border-radius: 5px;
+            height: 100px;
+            resize: none;
+            color: $text-color;
+        }
+
+    }
+    img{
+        border-radius: 5px;
+    }
+    select{
+        background-color: $bg-color2;
+        padding: 10px;
+        color: $text-color;
+    }
+
+    button{
+        background-color: $text-color2;
+        padding: 10px;
+        color: $text-color;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover{
+        filter: brightness(70%);
+    }
+}
+}
+
+.success-screen-show{
+    position: fixed;
+    background-color: $bg-color2;
+    height: 300px;
+    width: 300px; 
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    i{
+        font-size: 100px;
+        color: greenyellow;
+    }
+    h2{
+        font-size: 32px;
+        text-align: center;
+        margin: 0;
+    }
+    a{
+        background-color: $text-color2;
+        text-decoration: none;
+        color: $text-color;
+        padding: 5px;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+    a:hover{
+        filter: brightness(0.7);
+    }
+}
+
+.success-screen-hide{
+    visibility: hidden;
+}
+
+.form-blur{
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+//Responsive Design
+@media screen and (max-width:730px){
+    .selectors{
+        flex-direction: column;
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        button{
+            width: 300px;
+        }
+    }
+    .card-grid{
+    .phrase-card{
+        width: 100vw;
+
+        img{
+            width: 100vw;
+        }
+
+    }
+}
+.comment-field{
+    width: 100vw;
+}
+}
