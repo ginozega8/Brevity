@@ -23,7 +23,7 @@ const UserList = () => {
       return
     }
 
-    await axios.put("https://brevity-4kav.onrender.com/api/users" + e.target.id, updatedObj) //Request
+    await axios.put("https://brevity-production.up.railway.app/api/users" + e.target.id, updatedObj) //Request
     setComment("")
   }
 
@@ -70,7 +70,7 @@ const UserList = () => {
   useEffect(() => {
     
     const getUsers = async()=>{
-      const res = await axios.get("https://brevity-4kav.onrender.com/api/users")
+      const res = await axios.get("https://brevity-production.up.railway.app/api/users")
       setList(res.data)
     }
     getUsers()
