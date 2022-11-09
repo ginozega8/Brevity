@@ -23,7 +23,7 @@ const UserList = () => {
       return
     }
 
-    await axios.put("https://brevity-production.up.railway.app/api/users" + e.target.id, updatedObj) //Request
+    await axios.put("https://brevity-production.up.railway.app/api/users/" + e.target.id, updatedObj) //Request
     setComment("")
   }
 
